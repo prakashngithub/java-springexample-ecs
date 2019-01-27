@@ -26,7 +26,7 @@ steps{
 }      
 }
 
-       }
+    
    stage('test_deploy')
    {
        steps{ 
@@ -36,5 +36,6 @@ steps{
 
        }
    }
-    }
+   }
+    
     
