@@ -20,7 +20,7 @@ pipeline {
        {
 steps{
       script {
-                        file= ls /home/janakiraman/apache/webappps/app1.war
+                        file= sh "ls /home/janakiraman/apache/webappps/app1.war"
                         if (env.file=="app1.war")
                         sh 'cp /home/janakiraman/apache/webapps/app1.war /home/janakiraman/backups/app1.war'
       }
