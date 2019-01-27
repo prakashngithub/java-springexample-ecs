@@ -21,7 +21,7 @@ pipeline {
 steps{
       script {
                         file= ls /home/janakiraman/apache/webappps/app1.war
-                        if $(env.file=="app1.war")
+                        if (env.file=="app1.war")
                         sh 'cp /home/janakiraman/apache/webapps/app1.war /home/janakiraman/backups/app1.war'
       }
       sh 'cp target/*.war /home/janakiraman/apache/webapps/.' 
@@ -33,7 +33,7 @@ steps{
        steps{
            sh 'result=curl -s -o /dev/null -w %{http_code} localhost:8081/app1'
            script{
-                       if $(env.result==200)
+                       if (env.result==200)
                        {
                            echo 'deployment successful'
                        }
