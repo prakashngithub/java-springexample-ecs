@@ -22,7 +22,7 @@ steps{
       
 
       sh 'cp target/*.war /home/janakiraman/apache/webapps/.' 
-      sh 'cp /home/janakiraman/apache/webapps/app1*.war /home/janakiraman/backups/.'
+      sh 'mv /home/janakiraman/apache/webapps/app1*.war /home/janakiraman/backups/.'
 }      
 }
 
