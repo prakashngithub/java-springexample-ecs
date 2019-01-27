@@ -32,7 +32,7 @@ steps{
    stage('test_deploy')
    {
        steps{
-           file= sh 'ls /home/janakiraman/apache/webapps/ | grep app1*.war' | cut -d . -f 1'
+           file= sh "ls /home/janakiraman/apache/webapps/ | grep app1*.war | cut -d . -f 1"
            sh 'result=curl -s -o /dev/null -w %{http_code} localhost:8081/$file'
            script{
                        if (env.result==200)
