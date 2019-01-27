@@ -22,13 +22,16 @@ steps{
       
 
       sh 'cp target/*.war /home/janakiraman/apache/webapps/.' 
+      sh 'cp /home/janakiraman/apache/webapps/app1*.war /home/janakiraman/backups/.'
 }      
 }
 
        }
    stage('test_deploy')
    {
-       steps{
+       steps{ 
+
+           sh 'curl localhost:8081/app1'
           }
 
        }
