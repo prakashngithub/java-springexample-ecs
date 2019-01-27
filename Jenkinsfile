@@ -32,9 +32,10 @@ steps{
    stage('test_deploy')
    {
        steps{
-           file= sh "ls /home/janakiraman/apache/webapps/ | grep app1*.war | cut -d . -f 1"
-           sh 'result=curl -s -o /dev/null -w %{http_code} localhost:8081/$file'
            script{
+                      sh "file=ls /home/janakiraman/apache/webapps/ | grep app1*.war | cut -d . -f 1"
+                      sh 'result=curl -s -o /dev/null -w %{http_code} localhost:8081/env.file'
+           
                        if (env.result==200)
                        {
                            echo 'deployment successful'
