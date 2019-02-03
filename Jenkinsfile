@@ -20,7 +20,7 @@ pipeline {
         {
             steps
             {
-                docker.build("app1:${env.BUILD_ID"}
+                sh('docker build ${env.BUILD_ID}')
                              }
                              }
        stage('deploy')
