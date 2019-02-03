@@ -16,6 +16,13 @@ pipeline {
               sh('mvn clean install')
            }
        }
+       stage('build-docker')
+        {
+            steps
+            {
+                docker.build("app1:${env.BUILD_ID"}
+                             }
+                             }
        stage('deploy')
        {
 steps{
