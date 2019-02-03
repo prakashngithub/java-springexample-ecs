@@ -42,7 +42,15 @@ steps{
           }
 
        }
+  stage('deploy_docker')
+        {
+            steps
+            {
+                ansiblePlaybook extras: '--extra-vars "image_name=app1"  --extra-vars "image_tag=$BUILD_NUMBER"', installation: 'ansible', playbook: 'launch.yaml'
+                
    }
+        }
+    }
    }
     
     
