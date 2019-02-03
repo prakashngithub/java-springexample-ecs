@@ -1,0 +1,15 @@
+---
+ - hosts: localhost
+   tasks:
+    - name: "stopp previous container"
+      docker_container:
+        name: "{{ image_name }}"
+        state: absent
+    - name: "Launch containers"
+      docker_container:
+        name: "{{ image_name }}"
+        image: "{{ image_name }}:{{ image_tag }}"
+        state: started
+        ports:
+         - "90:8080"
+        detach: yes
