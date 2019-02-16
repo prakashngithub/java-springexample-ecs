@@ -5,6 +5,7 @@
       docker_container:
         name: "{{ image_name }}"
         state: absent
+      become: true  
     - name: "Launch containers"
       docker_container:
         name: "{{ image_name }}"
@@ -13,3 +14,4 @@
         ports:
          - "90:8080"
         detach: yes
+      become: true  
