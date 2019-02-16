@@ -1,5 +1,5 @@
-FROM prodaptimages/maven339java8
-RUN mkdir /app
+FROM ubuntu:18.04 
+RUN  apt update -y && apt install openjdk-8-jre openjdk-8-jdk maven -y
 WORKDIR /app
 ADD . /app
 RUN ls
