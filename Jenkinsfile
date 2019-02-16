@@ -14,7 +14,7 @@ pipeline {
         {
             steps
             {
-                sh('sudo docker build . -t app1:$BUILD_ID')
+                sh('docker build . -t app1:$BUILD_ID')
                              }
                              }
       
