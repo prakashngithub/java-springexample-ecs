@@ -33,7 +33,7 @@ pipeline {
         {
             steps
             {
-                curl localhost:9090/app1
+                curl localhost:90/app1
             }
         }
     }
