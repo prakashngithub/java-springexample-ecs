@@ -29,6 +29,13 @@ pipeline {
                 
    }
         }
+ stage('smoke-test')
+        {
+            steps
+            {
+                curl localhost:9090/app1
+            }
+        }
     }
    }
     
